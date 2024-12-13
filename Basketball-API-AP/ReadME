@@ -1,0 +1,49 @@
+Basketball API Dashboard
+This project presents a basketball-themed web application built using FastAPI and data from the Ball Don’t Lie API. It demonstrates dynamic data fetching, simple data transformations, and a visual representation of team performance through charts.
+
+Key Features
+
+Data Integration from a Public API:
+The application queries the Ball Don’t Lie API for NBA team data and game statistics, highlighting the ability to integrate external data sources into a custom tool.
+
+Dynamic Endpoints:
+
+Root Endpoint (/): Provides a welcome message and basic instructions on how to use the service.
+Team Info Endpoint (/team/{team_id}): Returns high-level information about the team, including name, city, and abbreviation.
+Team Plot Endpoint (/team/{team_id}/plot): Generates a PNG chart illustrating the team’s points scored per game, highlighting wins, losses, and a 5-game moving average trend line.
+
+Data Transformation:
+Beyond simply displaying raw data, the app computes a rolling average of points over the last 5 games. This provides deeper insights into team performance trends rather than just single-game snapshots.
+
+Visualizations:
+The application uses matplotlib and seaborn to produce a line chart with overlaid scatter points. Wins and losses are color-coded, making the data more intuitive and visually engaging.
+
+How It Works
+
+Fetch Team and Game Data:
+The code first retrieves team information based on a user-provided team ID.
+It then fetches that team’s games for the 2023 season.
+
+Analyze and Plot:
+The application calculates a 5-game moving average for points to reveal performance trends.
+It visualizes results, encoding wins/losses in the plot’s color and adding a moving average line to provide context.
+
+Interactive Exploration:
+
+With simple endpoints, users can:
+Identify a team’s basic info.
+Generate a dynamic plot to observe trends over the season.
+
+Technical Details
+
+Framework: FastAPI for rapid development of asynchronous endpoints.
+Data Handling: requests library for HTTP calls, pandas for data manipulation.
+Plotting: matplotlib and seaborn for creating and styling the charts.
+Server: Runs on uvicorn, making it easy to deploy locally or in the cloud.
+
+Future Improvements
+Enhanced Visualizations: Add more graphs or statistics, such as seasonal comparisons or player-level analytics.
+Interactivity: Incorporate JavaScript-based charts (Chart.js or Plotly) for interactive hover effects or filtering.
+Additional Metrics: Include efficiency ratings, rebounds, assists, or other game stats to broaden the analytical scope.
+
+
