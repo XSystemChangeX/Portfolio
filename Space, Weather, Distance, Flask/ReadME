@@ -1,0 +1,56 @@
+Space Station Tracker and Weather Dashboard
+This project creates a Python-Flask powered webpage that integrates multiple APIs to display dynamic information about the International Space Station (ISS). Each page load refreshes the data, ensuring that the information stays up-to-date.
+
+Features
+
+ISS Location (Latitude & Longitude):
+Leverages the Open-Notify ISS API to fetch the current coordinates of the ISS.
+Displays latitude and longitude.
+Shows a direct link to view the ISS position on Google Maps.
+
+Overhead Weather Conditions:
+Uses the OpenWeatherMap API to get the weather data at the ISS’s current coordinates.
+Converts temperature from Kelvin to Celsius.
+Shows a brief weather description (e.g., “clear sky,” “light rain”).
+
+National Flag of Country Below the ISS:
+Integrates reverse geolocation via BigDataCloud to find which country (if any) the ISS is currently over.
+If a country code is found, uses the REST Countries API to retrieve that country’s flag.
+If the ISS is over water and not above any country, it reports that as well.
+                                                                       
+Distance Calculation:
+Calculates the distance between a fixed user location (in this example, Kingston, Ontario at coordinates 44.230480, -76.481247) and the ISS’s current position using geopy.
+Displays the distance in kilometers, giving users a sense of how far overhead the ISS is.
+How It Works
+                                                                       
+Data Flow:
+
+ISS Position:
+The ISS_location() function fetches ISS coordinates from the Open-Notify API.
+
+Weather:
+The the_Weather() function uses these coordinates and queries the OpenWeatherMap API for local conditions.
+
+Reverse Geocoding & Flag Retrieval:
+The address() function uses the ISS coordinates with the BigDataCloud Reverse Geocoding API to determine the underlying country code.
+If a valid code is found, country() fetches the corresponding flag URL from the REST Countries API.
+
+Distance Calculation:
+Thedistance() uses geopy to compute the great-circle distance between the user’s chosen location and the ISS position.
+
+No User Input:
+The page does not accept form submissions or query parameters. On every reload, it pulls fresh data from the APIs.
+
+Code Comments & Readability:
+The code is commented to explain key logic, variable naming, and data transformations. This ensures that the project can be understood and maintained easily.
+
+Notes & Future Improvements
+                                                                       
+Error Handling:
+Future iterations could include more robust error handling for scenarios when APIs fail or return unexpected responses.
+
+Potential enhancements might include:
+A dynamic map embedding.
+Historical ISS pass data.
+More detailed weather data (humidity, wind speed).                                                                
+
