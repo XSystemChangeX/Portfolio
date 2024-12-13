@@ -1,0 +1,39 @@
+Build and Scrape a Website About You
+This project consists of two main parts:
+
+A Multi-Page Personal Website
+A Python-based Web Scraper
+The goal is to create a simple, navigable HTML website that introduces a fictional lawn mowing service, then use Python to scrape data from one of its pages.
+
+Website Overview
+Pages Created (5 total):
+
+index.html (Home): Introduces MowBuddy, a lawn mowing service, and provides navigation links.
+About.html: Explains the company background and philosophy.
+Gallery.html: Displays images showcasing before/after results or equipment.
+Services.html: Lists various service tiers and their costs, with a table for easy comparison.
+Contact.html: Provides contact information and a route to reach the team.
+Navigation:
+Each page includes <a> tags linking to all other pages, ensuring a cohesive browsing experience. Users can freely jump between Home, About, Gallery, Services, and Contact pages with button-based navigation.
+
+Design Intent:
+The site theme—MowBuddy—is a fictional lawn care service intended to convey professionalism, simplicity, and clarity. The pages use a consistent header and navigation layout, ensuring users can explore the content easily.
+
+Python Scraper (Part 2):
+A separate Python script uses requests and BeautifulSoup (bs4) to fetch and parse data from Services.html. Specifically, the scraper targets the <table> tag on the services page.
+
+Key Steps:
+
+Fetch Page Content:
+The scraper sends a GET request to Services.html via the deployed URL.
+
+Parse with BeautifulSoup:
+Using BeautifulSoup, it selects the <table> element.
+
+Data Extraction and Processing:
+The identified table contents (lawn size and associated costs) are printed or can be further processed. Storing the extracted results in a JSON or TXT file can be easily integrated by writing the parsed content to a local file.
+
+Future Improvements
+Enhance the site’s style with CSS for better aesthetics and user experience.
+Add more robust scraping logic—extract specific text content from table cells and store results in a structured JSON file.
+Expand functionality to include user interaction or server-side logic (e.g., form submissions).
