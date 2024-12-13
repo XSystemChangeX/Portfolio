@@ -1,0 +1,64 @@
+Virtual Workbook: Salary Visualization & Analysis
+
+This project demonstrates how to use OpenPyXL to programmatically interact with Excel workbooks. It fetches salary data (here, based on a provided dataset from Queen’s University top earners), writes it to an Excel file, generates several charts, and performs basic statistical analysis—all using Python code.
+
+Key Objectives
+
+Data Integration:
+Load salary data of top earners and prepare it for visualization and analysis.
+
+Excel Workbook Creation:
+
+Utilize OpenPyXL to write and format data into an Excel workbook.
+Organize data into sheets suitable for various forms of visualization.
+
+Chart Generation:
+
+Create multiple chart types to examine the data from different angles:
+
+Bar Chart: Compare the top 10 salaries by employee.
+Line Chart: Observe trends in salary over time.
+Scatter Chart: Explore the relationship between year and salary (though data quality issues limited clarity).
+Pie Chart: Display total salary distribution by position (noted that too many categories made interpretation challenging).
+
+Statistical Analysis:
+
+Incorporate formulas directly into the Excel sheet to compute:
+
+Mean Salary
+Median Salary
+Standard Deviation
+These basic statistics provide quick insights into the salary distribution within the dataset.
+
+Process Overview
+
+Loading the Dataset:
+The code begins by loading a provided Excel workbook containing top earner data since 1996.
+
+Chart Creation:
+Using references and series from OpenPyXL’s chart module, the script creates and embeds multiple charts directly into the workbook.
+
+Bar Chart: Shows top earners for quick comparisons.
+Line Chart: Intended to show salary progression over selected years.
+Scatter Chart: Attempts to show year vs. salary relationships (not ideal due to data repetition).
+Pie Chart: Depicts salary distribution by position category, though the dataset’s granularity led to many thin slices.
+
+Data Analysis:
+After populating charts, the script inserts formulas into the workbook to calculate mean, median, and standard deviation. This transforms the Excel file into a more dynamic analytical tool.
+
+Saving Results:
+The newly created workbook, complete with charts and statistics, is saved as Top_Earners_Charts_Analysis.xlsx.
+
+Known Challenges & Future Improvements
+
+Data Cleaning:
+The raw dataset limits some chart interpretations. Scatter charts resemble line charts due to repeated values and lack of distinct groups. The pie chart suffers from having too many unique categories (positions), making it hard to draw conclusions at a glance.
+
+Next Steps:
+Before future visualization efforts, the dataset should be cleaned and aggregated more effectively. Potential improvements include:
+
+Grouping job titles into broader categories.
+Aggregating salaries by year to better see trends.
+Using histograms or box plots for distributions.
+By refining data quality and structure, the charts will be more insightful and easier to interpret.
+
